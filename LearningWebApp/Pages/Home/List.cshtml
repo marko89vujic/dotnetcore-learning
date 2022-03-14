@@ -37,6 +37,9 @@
                     <a class="btn btn-lg" href="/Home/Detail?studentId=@student.StudentId">
                         Details
                     </a>
+                    <a class="btn btn-lg" asp-page="./Edit" asp-route-studentId="@student.StudentId">
+                        Edit
+                    </a>
                 </td>
             </tr>
         }

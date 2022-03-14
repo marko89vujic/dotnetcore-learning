@@ -16,5 +16,9 @@ namespace LearningCore.DataAccess
         List<Student> GetStudents();
 
         IEnumerable<Student> GetStudentByName(string studentName);
+
+        Student Update(Student updatedStudent);
+
+        int Commit();
     }
 }

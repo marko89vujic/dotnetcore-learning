@@ -1,0 +1,30 @@
+﻿@page "{studentId}: int"
+@using LearningCore.Entities
+@model LearningWebApp.Pages.Home.EditModel
+@{
+}
+
+<h1>Editing @Model.Student.Name</h1>
+
+<div>
+    <form method="post">
+
+        <input type="hidden" asp-for="Student.StudentId" />
+        <div class="form-group">
+            <label asp-for="Student.Name"></label>
+            <input asp-for="Student.Name" class="form-control" />
+            <span asp-validation-for="Student.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Student.LastName"></label>
+            <input asp-for="Student.LastName" class="form-control" />
+            <span asp-validation-for="Student.LastName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Student.Level"></label>
+            <select asp-for="Student.Level" class="form-control" asp-items="Html.GetEnumSelectList<Level>()">
+            </select>
+        </div>
+        <button type="submit" class="btn-primary">Save</button>
+    </form>
+</div>

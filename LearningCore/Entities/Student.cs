@@ -1,4 +1,6 @@
-﻿namespace LearningCore.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LearningCore.Entities
 {
     public enum Level
     {
@@ -10,8 +12,12 @@
     {
         public int StudentId { get; set; }
 
+        [Required]
+        [StringLength(80)]
         public string Name { get; set; }
 
+        [Required]
+        [StringLength(80)]
         public string LastName { get; set; }
 
         public Level Level { get; set; }

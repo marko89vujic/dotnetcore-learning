@@ -39,6 +39,25 @@ namespace LearningCore.Services
             return string.IsNullOrEmpty(studentName) ? students : students.Where(x => x.Name.StartsWith(studentName));
         }
 
+        public Student Update(Student updatedStudent)
+        {
+            var student = GetStudents().FirstOrDefault(x => x.StudentId == updatedStudent.StudentId);
+
+            if (student != null)
+            {
+                student.Name = updatedStudent.Name;
+                student.LastName = updatedStudent.LastName;
+                student.Level = updatedStudent.Level;
+            }
+
+            return student;
+        }
+
+        public int Commit()
+        {
+            return 1;
+        }
+
 
         private List<Student> GetInitialStudents()
         {

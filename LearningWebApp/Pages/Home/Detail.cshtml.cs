@@ -20,9 +20,17 @@ namespace LearningWebApp.Pages.Home
         {
             studentService = new StudentService();
         }
-        public void OnGet(int studentId)
+        public IActionResult OnGet(int studentId)
         {
+
             Student = studentService.GetStudentById(studentId);
+
+            if (Student == null)
+            {
+                return RedirectToPage("./NotFound");
+            }
+
+            return Page();
         }
     }
 }
