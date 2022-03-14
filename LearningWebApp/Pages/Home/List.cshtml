@@ -1,0 +1,44 @@
+﻿@page
+@model LearningWebApp.Pages.Home.ListModel
+@{
+}
+
+<h1>List page</h1>
+<div>
+    <h3>@Model.Message</h3>
+    <br />
+    <h2>@Model.NumberOfAttempts</h2>
+</div>
+
+
+<form action="/" method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm"/>
+            <span>
+                <button class="btn">
+                    <i class=""></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
+<br />
+<div>
+    <table class="table">
+        @foreach (var student in Model.Students)
+        {
+            <tr>
+                <td>@student.StudentId</td>
+                <td>@student.Name</td>
+                <td>@student.LastName</td>
+                <td>@student.Level</td>
+                <td>
+                    <a class="btn btn-lg" href="/Home/Detail?studentId=@student.StudentId">
+                        Details
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

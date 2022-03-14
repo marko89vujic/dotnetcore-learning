@@ -1,0 +1,22 @@
+﻿@page
+@model LearningWebApp.Pages.Home.DetailModel
+@{
+}
+
+
+@*@section script{
+    <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+}*@
+
+<h2>@Model.Student.Name</h2>
+<br />
+
+<div style="display: flow-root; justify-content: center; background-color: bisque">
+    <p class="font-weight-bold">StudentId</p>
+    <p>@Model.Student.StudentId</p>
+    <p>@Model.Student.Name</p>
+    <p>@Model.Student.LastName</p>
+    <p>@Model.Student.Level</p>
+</div>
+
+<a asp-page="./List" class="btn btn-link">Navigate to List page</a>
