@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace LearningCore.Entities
 {
@@ -10,7 +11,7 @@ namespace LearningCore.Entities
     }
     public class Student
     {
-        public int StudentId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(80)]

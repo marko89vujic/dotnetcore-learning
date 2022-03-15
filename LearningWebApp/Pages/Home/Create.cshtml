@@ -1,15 +1,16 @@
-﻿@page "{studentId}: int"
+﻿@page
 @using LearningCore.Entities
-@model LearningWebApp.Pages.Home.EditModel
+@model LearningWebApp.Pages.Home.CreateModel
 @{
 }
 
-<h1>Editing @Model.Student.Name</h1>
-
+<div>
+    <h1 class="font-weight-bold">Crate new Student</h1>
+</div>
 <div>
     <form method="post">
 
-        <input type="hidden" asp-for="Student.Id" />
+        @*<input type="hidden" asp-for="Student.Id" />*@
         <div class="form-group">
             <label asp-for="Student.Name"></label>
             <input asp-for="Student.Name" class="form-control" />

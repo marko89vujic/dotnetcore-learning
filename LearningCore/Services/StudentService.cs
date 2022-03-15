@@ -20,7 +20,7 @@ namespace LearningCore.Services
 
         public Student GetStudentById(int id)
         {
-            return students.FirstOrDefault(x => x.StudentId == id);
+            return students.FirstOrDefault(x => x.Id == id);
         }
 
         public void SaveStudent(Student student)
@@ -31,7 +31,7 @@ namespace LearningCore.Services
         public List<Student> GetStudents()
         {
             return new List<Student>
-                { new Student { Name = "Test1", LastName = "Test2", Level = Level.Beginner, StudentId = 1 }, new Student { Name = "test3", LastName = "test3", Level = Level.Professional, StudentId = 4} };
+                { new Student { Name = "Test1", LastName = "Test2", Level = Level.Beginner, Id = 1 }, new Student { Name = "test3", LastName = "test3", Level = Level.Professional, Id = 4} };
         }
 
         public IEnumerable<Student> GetStudentByName(string studentName)
@@ -41,7 +41,7 @@ namespace LearningCore.Services
 
         public Student Update(Student updatedStudent)
         {
-            var student = GetStudents().FirstOrDefault(x => x.StudentId == updatedStudent.StudentId);
+            var student = GetStudents().FirstOrDefault(x => x.Id == updatedStudent.Id);
 
             if (student != null)
             {
@@ -58,11 +58,16 @@ namespace LearningCore.Services
             return 1;
         }
 
+        public void AddNewStudent(Student student)
+        {
+            student.Id = students.Max(x => x.Id) + 1;
+            students.Add(student);
+        }
 
         private List<Student> GetInitialStudents()
         {
             return new List<Student>
-                { new Student { Name = "Test1", LastName = "Test2", Level = Level.Beginner, StudentId = 1 }, new Student { Name = "test3", LastName = "test3", Level = Level.Professional, StudentId = 4}, new Student { Name = "test4", LastName = "test4", Level = Level.Professional, StudentId = 5} };
+                { new Student { Name = "Test1", LastName = "Test2", Level = Level.Beginner, Id = 1 }, new Student { Name = "test3", LastName = "test3", Level = Level.Professional, Id = 4}, new Student { Name = "test4", LastName = "test4", Level = Level.Professional, Id = 5} };
         }
     }
 }

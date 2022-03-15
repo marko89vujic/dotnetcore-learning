@@ -19,6 +19,8 @@ namespace LearningCore.DataAccess
 
         Student Update(Student updatedStudent);
 
+        void AddNewStudent(Student student);
+
         int Commit();
     }
 }

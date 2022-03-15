@@ -29,19 +29,22 @@
         @foreach (var student in Model.Students)
         {
             <tr>
-                <td>@student.StudentId</td>
+                <td>@student.Id</td>
                 <td>@student.Name</td>
                 <td>@student.LastName</td>
                 <td>@student.Level</td>
                 <td>
-                    <a class="btn btn-lg" href="/Home/Detail?studentId=@student.StudentId">
+                    <a class="btn btn-lg" href="/Home/Detail?studentId=@student.Id">
                         Details
                     </a>
-                    <a class="btn btn-lg" asp-page="./Edit" asp-route-studentId="@student.StudentId">
+                    <a class="btn btn-lg" asp-page="./Edit" asp-route-studentId="@student.Id">
                         Edit
                     </a>
                 </td>
             </tr>
         }
     </table>
+</div>
+<div>
+    <a class="btn-link" asp-page="./Create">Add New</a>
 </div>

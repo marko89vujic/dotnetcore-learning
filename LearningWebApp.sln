@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningWebApp", "LearningW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningCore", "LearningCore\LearningCore.csproj", "{7D7014FD-0D86-41BC-AD67-1C4A9B08CFC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningApp.Infrastructure", "LearningApp.Infrastructure\LearningApp.Infrastructure.csproj", "{682318B3-D321-4CAF-90B2-7F44C1E1786D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7D7014FD-0D86-41BC-AD67-1C4A9B08CFC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D7014FD-0D86-41BC-AD67-1C4A9B08CFC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D7014FD-0D86-41BC-AD67-1C4A9B08CFC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{682318B3-D321-4CAF-90B2-7F44C1E1786D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{682318B3-D321-4CAF-90B2-7F44C1E1786D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{682318B3-D321-4CAF-90B2-7F44C1E1786D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{682318B3-D321-4CAF-90B2-7F44C1E1786D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

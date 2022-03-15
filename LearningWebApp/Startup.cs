@@ -1,16 +1,12 @@
-using LearningCore.Entities;
+using LearningApp.Infrastructure;
+using LearningCore.DataAccess;
+using LearningCore.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using LearningCore.DataAccess;
-using LearningCore.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace LearningWebApp
 {
@@ -26,8 +22,12 @@ namespace LearningWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContextPool<LearningWebAppContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("LearningWebApp"));
+            });
             services.AddRazorPages();
-            services.AddSingleton<IStudentService, StudentService>();
+            services.AddTransient<IStudentService, StudentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

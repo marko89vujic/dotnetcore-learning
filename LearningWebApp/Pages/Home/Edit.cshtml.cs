@@ -45,6 +45,7 @@ namespace LearningWebApp.Pages.Home
             {
                 Student = _studentService.Update(Student);
                 _studentService.Commit();
+                return RedirectToPage("./Detail", new { studentId = Student.Id});
             }
             
             return Page();
