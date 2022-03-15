@@ -28,6 +28,7 @@ namespace LearningWebApp
             });
             services.AddRazorPages();
             services.AddTransient<IStudentService, StudentService>();
+            services.AddScoped<IStudentData, StudentData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

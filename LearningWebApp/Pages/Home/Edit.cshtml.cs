@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LearningApp.Infrastructure;
 using LearningCore.DataAccess;
 using LearningCore.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +13,7 @@ namespace LearningWebApp.Pages.Home
 {
     public class EditModel : PageModel
     {
-        private IStudentService _studentService;
+        private IStudentData _studentData;
 
         private IHtmlHelper _htmlHelper;
 
@@ -21,15 +22,15 @@ namespace LearningWebApp.Pages.Home
 
         public IEnumerable<Level> Levels { get; set; }
 
-        public EditModel(IStudentService studentService, IHtmlHelper htmlHelper)
+        public EditModel(IStudentData studentData, IHtmlHelper htmlHelper)
         {
-            _studentService = studentService;
+            _studentData = studentData;
             _htmlHelper = htmlHelper;
         }
 
         public IActionResult OnGet(int studentId)
         {
-            Student = _studentService.GetStudentById(studentId);
+            Student = _studentData.GetStudentById(studentId);
             // Levels = (IEnumerable<Level>)_htmlHelper.GetEnumSelectList<Level>();
             if (Student == null)
             {
@@ -43,8 +44,7 @@ namespace LearningWebApp.Pages.Home
         {
             if (ModelState.IsValid)
             {
-                Student = _studentService.Update(Student);
-                _studentService.Commit();
+                _studentData.Update(Student);
                 return RedirectToPage("./Detail", new { studentId = Student.Id});
             }
             

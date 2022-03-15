@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LearningApp.Infrastructure;
 using LearningCore.DataAccess;
 using LearningCore.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -11,14 +12,14 @@ namespace LearningWebApp.Pages.Home
 {
     public class CreateModel : PageModel
     {
-        private IStudentService _studentService;
+        private IStudentData _studentData;
 
         [BindProperty]
         public Student Student { get; set; }
 
-        public CreateModel(IStudentService studentService)
+        public CreateModel(IStudentData studentData)
         {
-            _studentService = studentService;
+            _studentData = studentData;
         }
 
         public void OnGet()
@@ -29,8 +30,8 @@ namespace LearningWebApp.Pages.Home
         {
             if (ModelState.IsValid)
             {
-                _studentService.AddNewStudent(Student);
-                _studentService.Commit();
+                _studentData.AddNewStudent(Student);
+                _studentData.Commit();
                 return RedirectToPage("./List");
             }
 

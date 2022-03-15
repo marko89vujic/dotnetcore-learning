@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LearningApp.Infrastructure;
 using LearningCore.DataAccess;
 using LearningCore.Entities;
 using LearningCore.Services;
@@ -12,18 +13,18 @@ namespace LearningWebApp.Pages.Home
 {
     public class DetailModel : PageModel
     {
-        private readonly IStudentService studentService;
+        private readonly IStudentData _studentData;
 
         public Student Student { get; set; }
 
-        public DetailModel()
+        public DetailModel(IStudentData studentData)
         {
-            studentService = new StudentService();
+            _studentData = studentData;
         }
         public IActionResult OnGet(int studentId)
         {
 
-            Student = studentService.GetStudentById(studentId);
+            Student = _studentData.GetStudentById(studentId);
 
             if (Student == null)
             {

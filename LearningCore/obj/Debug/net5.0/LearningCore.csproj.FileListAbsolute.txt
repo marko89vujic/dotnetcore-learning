@@ -1,4 +1,3 @@
-C:\Learning\.NET core\LearningWebApp\LearningCore\obj\Debug\net5.0\LearningCore.csproj.AssemblyReference.cache
 C:\Learning\.NET core\LearningWebApp\LearningCore\obj\Debug\net5.0\LearningCore.GeneratedMSBuildEditorConfig.editorconfig
 C:\Learning\.NET core\LearningWebApp\LearningCore\obj\Debug\net5.0\LearningCore.AssemblyInfoInputs.cache
 C:\Learning\.NET core\LearningWebApp\LearningCore\obj\Debug\net5.0\LearningCore.AssemblyInfo.cs
@@ -10,3 +9,4 @@ C:\Learning\.NET core\LearningWebApp\LearningCore\bin\Debug\net5.0\LearningCore.
 C:\Learning\.NET core\LearningWebApp\LearningCore\obj\Debug\net5.0\LearningCore.dll
 C:\Learning\.NET core\LearningWebApp\LearningCore\obj\Debug\net5.0\ref\LearningCore.dll
 C:\Learning\.NET core\LearningWebApp\LearningCore\obj\Debug\net5.0\LearningCore.pdb
+C:\Learning\.NET core\LearningWebApp\LearningCore\obj\Debug\net5.0\LearningCore.csproj.AssemblyReference.cache

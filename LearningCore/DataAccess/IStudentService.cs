@@ -21,6 +21,8 @@ namespace LearningCore.DataAccess
 
         void AddNewStudent(Student student);
 
+        void DeleteStudent(int studentId);
+
         int Commit();
     }
 }

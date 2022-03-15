@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LearningApp.Infrastructure;
 using LearningCore.DataAccess;
 using LearningCore.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -14,7 +15,7 @@ namespace LearningWebApp.Pages.Home
     {
         private readonly IConfiguration _configuration;
 
-        private readonly IStudentService _studentService;
+        private readonly IStudentData _studentData;
 
         public IEnumerable<Student> Students { get; set; }
         public string Message { get; set; }
@@ -24,16 +25,16 @@ namespace LearningWebApp.Pages.Home
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
 
-        public ListModel(IConfiguration configuration, IStudentService studentService)
+        public ListModel(IConfiguration configuration, IStudentData studentData)
         {
             _configuration = configuration;
-            _studentService = studentService;
+            _studentData = studentData;
         }
         public void OnGet()
         {
             Message = "Test333";
             NumberOfAttempts = _configuration["NumberOfAttempts"];
-            Students = _studentService.GetStudentByName(SearchTerm);
+            Students = _studentData.GetStudents();
         }
     }
 }

@@ -11,7 +11,8 @@ namespace LearningCore.Services
     public class StudentService : IStudentService
     {
         private List<Student> students;
-
+        
+        //private LearningWebAppContext
 
         public StudentService()
         {
@@ -62,6 +63,16 @@ namespace LearningCore.Services
         {
             student.Id = students.Max(x => x.Id) + 1;
             students.Add(student);
+        }
+
+        public void DeleteStudent(int studentId)
+        {
+            var student = students.FirstOrDefault(x => x.Id == studentId);
+
+            if (student != null)
+            {
+                students.Remove(student);
+            }
         }
 
         private List<Student> GetInitialStudents()
